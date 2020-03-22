@@ -1,4 +1,4 @@
-// Initialize Swiper
+function swiperInit() {// Initialize Swiper
 
 var swiper = new Swiper('.swiper-container', {
     spaceBetween: 30,
@@ -9,4 +9,5 @@ var swiper = new Swiper('.swiper-container', {
         width: 14,
         height: 14
     },
-});
+});}
+module.exports = swiperInit;

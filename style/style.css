@@ -4,7 +4,7 @@
   padding: 0;
 }
 
-header .container-fluid .row .col-md-6 .nav-li {
+header .container-fluid .row .header-center .nav-li {
   position: relative;
   padding: 65px 30px 20px 30px;
   list-style-type: none;
@@ -13,11 +13,11 @@ header .container-fluid .row .col-md-6 .nav-li {
   transition: .1s;
 }
 
-header .container-fluid .row .col-md-6 .nav-li:hover {
+header .container-fluid .row .header-center .nav-li:hover {
   border-bottom: 2px solid #E4B56B;
 }
 
-header .container-fluid .row .col-md-6 .nav-li a {
+header .container-fluid .row .header-center .nav-li a {
   font-family: "Raleway", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -28,12 +28,12 @@ header .container-fluid .row .col-md-6 .nav-li a {
   text-decoration: none;
 }
 
-header .container-fluid .row .col-md-6 .dropdown {
+header .container-fluid .row .header-center .dropdown {
   position: relative;
   display: inline-block;
 }
 
-header .container-fluid .row .col-md-6 .dropdown-content {
+header .container-fluid .row .header-center .dropdown-content {
   display: none;
   position: absolute;
   top: 100%;
@@ -45,22 +45,22 @@ header .container-fluid .row .col-md-6 .dropdown-content {
   z-index: 100;
 }
 
-header .container-fluid .row .col-md-6 .dropdown-content a {
+header .container-fluid .row .header-center .dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-header .container-fluid .row .col-md-6 .dropdown-content a:hover {
+header .container-fluid .row .header-center .dropdown-content a:hover {
   background-color: #ddd;
 }
 
-header .container-fluid .row .col-md-6 .dropdown:hover .dropdown-content {
+header .container-fluid .row .header-center .dropdown:hover .dropdown-content {
   display: block;
 }
 
-header .container-fluid .row .col-md-6 .dropdown:hover .arrow {
+header .container-fluid .row .header-center .dropdown:hover .arrow {
   -webkit-transition: .3s;
   transition: .3s;
   -webkit-transform: rotate(180deg);
@@ -82,6 +82,7 @@ header .container-fluid .row .header-right .search-item {
 header .container-fluid .row .header-right .search-item .search-item-block {
   display: none;
   position: relative;
+  left: -5px;
 }
 
 header .container-fluid .row .header-right .search-item .search-item-block input {
@@ -154,18 +155,15 @@ header .container-fluid .row .header-right .dropdown:hover .arrow {
         -ms-flex-pack: start !important;
             justify-content: start !important;
   }
-  header .container-fluid .row .header-right {
-    padding-left: 100px;
-  }
   header .container-fluid .row .header-right .ml-5 {
     margin-left: 20% !important;
   }
   header .container-fluid img {
-    width: 50%;
+    width: 100%;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 769px) {
   header .container-fluid {
     display: none;
   }
@@ -195,6 +193,37 @@ header .mobile-container .topnav .active {
 header .mobile-container .topnav #myLinks {
   display: none;
   padding: 0 16px;
+}
+
+header .mobile-container .topnav #myLinks .dropdown {
+  position: relative;
+}
+
+header .mobile-container .topnav #myLinks .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+header .mobile-container .topnav #myLinks .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+header .mobile-container .topnav #myLinks .dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+header .mobile-container .topnav #myLinks .dropdown:hover .dropdown-content {
+  display: block;
 }
 
 header .mobile-container .topnav a {
@@ -268,7 +297,7 @@ header .mobile-container .search .searchIcon {
   right: 0;
 }
 
-@media (min-width: 601px) {
+@media (min-width: 769px) {
   header .mobile-container {
     display: none;
   }
@@ -404,6 +433,8 @@ header .mobile-container .search .searchIcon {
   margin-top: 30px;
   height: 56px;
   background: rgba(62, 62, 62, 0.9);
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 .services .container .wrapper-grid h2::after {
@@ -418,10 +449,34 @@ header .mobile-container .search .searchIcon {
           transform: rotate(-90deg);
 }
 
+@media (max-width: 320px) {
+  .services .container .wrapper-grid h2::after {
+    display: none;
+  }
+}
+
 @media (max-width: 767px) {
   .services .container .wrapper-grid h2::after {
     width: 20%;
     top: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .services .container .wrapper-grid h2 {
+    width: 333px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .services .container .wrapper-grid h2 {
+    width: 95%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .services .container .wrapper-grid h2 {
+    font-size: 18px;
   }
 }
 
@@ -434,20 +489,21 @@ header .mobile-container .search .searchIcon {
         -ms-flex-align: center;
             align-items: center;
     height: 40%;
+    font-size: 17px;
+    line-height: 18px;
+  }
+}
+
+@media (max-width: 460px) {
+  .services .container .wrapper-grid h2 {
     font-size: 12px;
     line-height: 14px;
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 320px) {
   .services .container .wrapper-grid h2 {
-    width: 95%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .services .container .wrapper-grid h2 {
-    width: 333px;
+    width: 100%;
   }
 }
 
@@ -464,7 +520,7 @@ header .mobile-container .search .searchIcon {
   }
 }
 
-.services .container .wrapper-grid .box1 {
+.services .container .wrapper-grid .box1, .services .container .wrapper-grid .box2 {
   font-family: "Raleway", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -474,48 +530,15 @@ header .mobile-container .search .searchIcon {
   color: #FFFFFF;
   display: -ms-grid;
   display: grid;
+  grid-column-gap: 10px;
+}
+
+.services .container .wrapper-grid .box1 {
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   -ms-grid-rows: (1fr)[2];
       grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 10px;
   grid-row-gap: 10px;
-}
-
-.services .container .wrapper-grid .box1 .wrapper-production {
-  background: url(../img/производство_оборудования.png);
-  background-size: cover;
-  background-position: center;
-}
-
-.services .container .wrapper-grid .box1 .wrapper-furniture {
-  background: url(../img/металлическая_мебель.png);
-  background-size: cover;
-  background-position: center;
-}
-
-.services .container .wrapper-grid .box1 .wrapper-structures {
-  background: url(../img/метоллоконстр.png);
-  background-size: cover;
-  background-position: center;
-}
-
-.services .container .wrapper-grid .box1 .wrapper-metalworking {
-  background: url(../img/металообра.png);
-  background-size: cover;
-  background-position: center;
-}
-
-.services .container .wrapper-grid .box1 .wrapper-cutting {
-  background: url(../img/лазер.png);
-  background-size: cover;
-  background-position: center;
-}
-
-.services .container .wrapper-grid .box1 .wrapper-department {
-  background: url(../img/бюро.png);
-  background-size: cover;
-  background-position: center;
 }
 
 @media (max-width: 767px) {
@@ -528,76 +551,49 @@ header .mobile-container .search .searchIcon {
 }
 
 .services .container .wrapper-grid .box2 {
-  font-family: "Raleway", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 60px;
-  text-align: center;
-  color: #FFFFFF;
-  display: -ms-grid;
-  display: grid;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 10px;
 }
 
-.services .container .wrapper-grid .box2 .wrapper-rent {
-  background: url(../img/аренда.png);
+.services .container .wrapper-grid .wrapper-production, .services .container .wrapper-grid .wrapper-furniture, .services .container .wrapper-grid .wrapper-structures, .services .container .wrapper-grid .wrapper-metalworking, .services .container .wrapper-grid .wrapper-cutting, .services .container .wrapper-grid .wrapper-department, .services .container .wrapper-grid .wrapper-rent, .services .container .wrapper-grid .wrapper-repairs {
   background-size: cover;
   background-position: center;
 }
 
-.services .container .wrapper-grid .box2 .wrapper-rent h2 {
-  font-family: "Raleway", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 60px;
-  text-align: center;
-  color: #FFFFFF;
+.services .container .wrapper-grid .wrapper-production:hover h2, .services .container .wrapper-grid .wrapper-furniture:hover h2, .services .container .wrapper-grid .wrapper-structures:hover h2, .services .container .wrapper-grid .wrapper-metalworking:hover h2, .services .container .wrapper-grid .wrapper-cutting:hover h2, .services .container .wrapper-grid .wrapper-department:hover h2, .services .container .wrapper-grid .wrapper-rent:hover h2, .services .container .wrapper-grid .wrapper-repairs:hover h2 {
+  width: 100%;
 }
 
-@media (max-width: 768px) {
-  .services .container .wrapper-grid .box2 .wrapper-rent h2 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    font-size: 12px;
-    line-height: 14px;
-  }
+.services .container .wrapper-grid .wrapper-production {
+  background: url(../img/производство_оборудования.png);
 }
 
-.services .container .wrapper-grid .box2 .wrapper-repairs {
-  background: url(../img/ремонт.png);
-  background-size: cover;
-  background-position: center;
+.services .container .wrapper-grid .wrapper-furniture {
+  background: url(../img/металлическая_мебель.png);
 }
 
-.services .container .wrapper-grid .box2 .wrapper-repairs h2 {
-  font-family: "Raleway", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 60px;
-  text-align: center;
-  color: #FFFFFF;
+.services .container .wrapper-grid .wrapper-structures {
+  background: url(../img/метоллоконстр.png);
 }
 
-@media (max-width: 768px) {
-  .services .container .wrapper-grid .box2 .wrapper-repairs h2 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    font-size: 12px;
-    line-height: 14px;
-  }
+.services .container .wrapper-grid .wrapper-metalworking {
+  background: url(../img/металообра.png);
+}
+
+.services .container .wrapper-grid .wrapper-cutting {
+  background: url(../img/лазер.png);
+}
+
+.services .container .wrapper-grid .wrapper-department {
+  background: url(../img/бюро.png);
+}
+
+.services .container .wrapper-grid .wrapper-rent {
+  background: url(../img/аренда.png) no-repeat;
+}
+
+.services .container .wrapper-grid .wrapper-repairs {
+  background: url(../img/ремонт.png) no-repeat;
 }
 
 .services .container .btn {
@@ -621,6 +617,12 @@ header .mobile-container .search .searchIcon {
   line-height: 23px;
   border: none;
   background: #454647;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.services .container .btn button:hover {
+  background: #9fa7af;
 }
 
 @media (max-width: 768px) {
@@ -732,9 +734,18 @@ header .mobile-container .search .searchIcon {
           transform: rotate(-90deg);
 }
 
+@media (max-width: 768px) {
+  .company .container-fluid .wrapper-grid .wrapper-text {
+    width: 100%;
+  }
+  .company .container-fluid .wrapper-grid .wrapper-text .why-text {
+    margin-left: 2%;
+  }
+}
+
 @media (max-width: 460px) {
   .company .container-fluid .wrapper-grid .wrapper-text {
-    width: 326px;
+    width: 320px;
     height: 180px;
   }
   .company .container-fluid .wrapper-grid .wrapper-text h1 {
@@ -819,6 +830,13 @@ footer .container-fluid .row .about ul li, footer .container-fluid .row .service
 footer .container-fluid .row .about ul li a, footer .container-fluid .row .services-footer ul li a, footer .container-fluid .row .contact ul li a {
   text-decoration: none;
   color: #AEAEAE;
+  border-bottom: 2px solid #fff;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+footer .container-fluid .row .about ul li a:hover, footer .container-fluid .row .services-footer ul li a:hover, footer .container-fluid .row .contact ul li a:hover {
+  border-bottom: 2px solid #AEAEAE;
 }
 
 footer .container-fluid .row .about {

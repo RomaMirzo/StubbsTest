@@ -1,0 +1,31 @@
+{
+  "name": "test-stubbs",
+  "version": "1.0.0",
+  "description": "testStubbs",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "babel-loader": "^8.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomaMirzo/StubbsTest.git"
+  },
+  "keywords": [
+    "stubbs"
+  ],
+  "author": "Roman <mirzo1930@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RomaMirzo/StubbsTest/issues"
+  },
+  "homepage": "https://github.com/RomaMirzo/StubbsTest#readme"
+}

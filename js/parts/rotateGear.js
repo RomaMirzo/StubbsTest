@@ -1,4 +1,4 @@
-"use strict";
+function rotateGear() {"use strict";
 
 let gear = document.querySelectorAll(".rotate-gear"),
     services = document.querySelector(".services"),
@@ -10,4 +10,5 @@ document.addEventListener('mousewheel', function() {
         gear[i].style.transform = `rotate(${num}deg)`;
         // console.log(item);
     });
-});
+});}
+module.exports = rotateGear;

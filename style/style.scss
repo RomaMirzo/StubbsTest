@@ -62,7 +62,7 @@ $font-family: 'Raleway', sans-serif;
 header {
     .container-fluid {
         .row {
-            .col-md-6 {
+            .header-center {
                 .nav-li {
                     position: relative;
                     padding: 65px 30px 20px 30px;
@@ -116,6 +116,8 @@ header {
                     .search-item-block {
                         display: none;
                         position: relative;
+                        left: -5px;
+                        // top: -45px;
                         input {
                             @include main_font_h4();
                             position: absolute;
@@ -172,7 +174,6 @@ header {
                     justify-content: start!important;
                 }
                 .header-right {
-                    padding-left: 100px;
                     .ml-5 {
                         margin-left: 20%!important;
                     }
@@ -180,10 +181,10 @@ header {
                 
             }
             img {
-                width: 50%;
+                width: 100%;
             }
         }
-        @media (max-width: 600px){
+        @media (max-width: 769px){
             display: none;
         }
     }
@@ -206,6 +207,30 @@ header {
             & #myLinks {
                 display: none;
                 padding: 0 16px;
+                .dropdown {
+                    position: relative;
+                    &-content {
+                        display: none;
+                        position: absolute;
+                        top: 100%;
+                        left: 50%;
+                        background-color: #f1f1f1;
+                        min-width: 160px;
+                        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                        z-index: 100;
+
+                        & a {
+                            color: black;
+                            padding: 12px 16px;
+                            text-decoration: none;
+                            display: block;
+
+                            &:hover {background-color: #ddd;}
+                          }
+                      }
+                }
+                .dropdown:hover .dropdown-content {display: block;}
+
               }
 
             & a {
@@ -264,7 +289,7 @@ header {
                 right: 0;
             }
           }
-        @media (min-width: 601px) {
+        @media (min-width: 769px) {
             display: none;
         }
     }
@@ -313,7 +338,6 @@ header {
                 }
             }
         }
-          
     }
     @media (max-width: 460px) {
         height: 100%;
@@ -365,7 +389,8 @@ header {
                 margin-top: 30px;
                 height: 56px;
                 background: rgba(62, 62, 62, 0.9);
-
+                transition: .2s;
+                
                 &::after {
                     content: "";
                     position: absolute;
@@ -375,25 +400,38 @@ header {
                     height: 2px;
                     background: #E4B56B;
                     transform: rotate(-90deg);
+                    @media (max-width: 320px) {
+                        display: none;
+                    }
                     @media (max-width: 767px) {
                         width: 20%;
                         top: 16px;
                     }
                 }
-                
+
+                @media (min-width: 1200px) {
+                    width: 333px;
+                }
+                @media (max-width: 1199px) {
+                    width: 95%;
+                }
+                @media (max-width: 1024px) {
+                    font-size: 18px;
+                }
                 @media (max-width: 768px) {
                     display: flex;
                     align-items: center;
                     
                     height: 40%;
+                    font-size: 17px;
+                    line-height: 18px;
+                }
+                @media (max-width: 460px) {
                     font-size: 12px;
                     line-height: 14px;
                 }
-                @media (max-width: 1199px) {
-                    width: 95%;
-                }
-                @media (min-width: 1200px) {
-                    width: 333px;
+                @media (max-width: 320px) {
+                    width: 100%;
                 }
             }
             @media (max-width: 500px) {
@@ -402,82 +440,57 @@ header {
             @media (max-width: 767px) {
                 grid-template-rows: 3fr 1fr;
             }
-            .box1 {
+
+            .box1, .box2 {
                 @include main_font_h2();
                 display: grid;
+                grid-column-gap: 10px;
+            }
+            .box1 {
                 grid-template-columns: repeat(3, 1fr);
                 grid-template-rows: repeat(2, 1fr);
-                grid-column-gap: 10px;
                 grid-row-gap: 10px;
-                
-                .wrapper-production {
-                    background: url(../img/производство_оборудования.png);
-                    background-size: cover;
-                    background-position: center;
-                }
-                .wrapper-furniture {
-                    background: url(../img/металлическая_мебель.png);
-                    background-size: cover;
-                    background-position: center;
-                }
-                .wrapper-structures {
-                    background: url(../img/метоллоконстр.png);
-                    background-size: cover;
-                    background-position: center;
-                }
-                .wrapper-metalworking {
-                    background: url(../img/металообра.png);
-                    background-size: cover;
-                    background-position: center;
-                }
-                .wrapper-cutting {
-                    background: url(../img/лазер.png);
-                    background-size: cover;
-                    background-position: center;
-                }
-                .wrapper-department {
-                    background: url(../img/бюро.png);
-                    background-size: cover;
-                    background-position: center;
-                }
+
                 @media (max-width: 767px) {
                     grid-template-columns: repeat(2, 1fr);
                     grid-template-rows: repeat(3, 1fr);
                 }
             }
             .box2 {
-                @include main_font_h2();
-                display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                grid-column-gap: 10px;
-                .wrapper-rent {
-                    background: url(../img/аренда.png);
-                    background-size: cover;
-                    background-position: center;
+            }
+            .wrapper-production, .wrapper-furniture, .wrapper-structures, .wrapper-metalworking, .wrapper-cutting, .wrapper-department, .wrapper-rent, .wrapper-repairs {
+                background-size: cover;
+                background-position: center;
+                &:hover {
                     h2 {
-                        @include main_font_h2();
-                        @media (max-width: 768px) {
-                            display: flex;
-                            align-items: center;
-                            font-size: 12px;
-                            line-height: 14px;
-                        }
+                        width: 100%;
                     }
                 }
-                .wrapper-repairs {
-                    background: url(../img/ремонт.png);
-                    background-size: cover;
-                    background-position: center;
-                    h2 {
-                        @include main_font_h2();
-                        @media (max-width: 768px) {
-                            display: flex;
-                            align-items: center;
-                            font-size: 12px;
-                            line-height: 14px;
-                        }
-                    }
-                }
+            }
+            .wrapper-production {
+                background: url(../img/производство_оборудования.png);
+            }
+            .wrapper-furniture {
+                background: url(../img/металлическая_мебель.png);
+            }
+            .wrapper-structures {
+                background: url(../img/метоллоконстр.png);
+            }
+            .wrapper-metalworking {
+                background: url(../img/металообра.png);
+            }
+            .wrapper-cutting {
+                background: url(../img/лазер.png);
+            }
+            .wrapper-department {
+                background: url(../img/бюро.png);
+            }
+            .wrapper-rent {
+                background: url(../img/аренда.png) no-repeat;
+            }
+            .wrapper-repairs {
+                background: url(../img/ремонт.png) no-repeat;
             }
         }
         .btn {
@@ -489,7 +502,10 @@ header {
                 line-height: 23px;
                 border: none;
                 background: #454647;
-                
+                transition: .2s;
+                &:hover {
+                    background: #9fa7af;
+                }
                 @media (max-width: 768px) {
                     font-size: 14px;
                     line-height: 16px;
@@ -569,9 +585,15 @@ header {
                         transform: rotate(-90deg);
                     }
                 }
+                @media (max-width: 768px) {
+                    width: 100%;
+                    .why-text {
+                        margin-left: 2%;
+                    }
+                }
                 @media (max-width: 460px){
                     
-                    width: 326px;
+                    width: 320px;
                     height: 180px;
                     h1 {
                         font-size: 20px;
@@ -643,6 +665,11 @@ footer {
                         a {
                             text-decoration: none;
                             color: #AEAEAE;
+                            border-bottom: 2px solid #fff;
+                            transition: .2s;
+                            &:hover {
+                                border-bottom: 2px solid #AEAEAE;
+                            }
                         }
                     }
                 }

@@ -22,12 +22,12 @@
     <header>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-3 d-flex justify-content-center align-items-center">
+                <div class="col-md-2 col-xl-3 d-flex justify-content-center align-items-center header-left">
                     <img src="img/Logo.png">
                 </div>
-                <div class="col-md-6 text-center">
-                    <ul class="d-flex justify-content-center">
-                        <li class="nav-li border-right">
+                <div class="col-md-8 col-xl-6 text-center header-center">
+                    <ul class="d-flex justify-content-center mb-0">
+                        <li class="nav-li pl-0 border-right">
                             <a  href="#">Главная</a>
                         </li>
                         <li class="nav-li border-right dropdown">
@@ -50,12 +50,12 @@
                         <li class="nav-li border-right">
                             <a href="#">О нас</a>
                         </li>
-                        <li class="nav-li border-left">
+                        <li class="nav-li pr-0 border-left">
                             <a href="#">Контакты</a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-3 d-flex justify-content-center header-right">
+                <div class="col-md-2 col-xl-3 d-flex justify-content-center header-right">
                     <div class="search-item">
                         <div class="search-item-block">
                             <input name="search" class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
@@ -108,10 +108,8 @@
                 </div>
             </div>
         </div>
-        <!-- Simulate a smartphone / tablet -->
-        <div class="mobile-container">
 
-        <!-- Top Navigation Menu -->
+        <div class="mobile-container">
         <div class="topnav">
             <div class="active">
                 <img src="img/Logo.png" alt="#" width="100px">
@@ -142,11 +140,18 @@
                     </a>
                     
                 </div>
-                <a href="#" class="d-flex justify-content-between">Услуги
-                    <svg width="11" height="21" viewBox="0 0 11 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.93748 10.5L-8.60561e-08 19.0313L0 21L11 10.5L-9.17939e-07 0L-8.31883e-07 1.96873L8.93748 10.5Z" fill="white"/>
-                    </svg>
-                </a>
+                <div class="dropdown">
+                    <a href="#" class="d-flex justify-content-between">Услуги
+                        <svg width="11" height="21" viewBox="0 0 11 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.93748 10.5L-8.60561e-08 19.0313L0 21L11 10.5L-9.17939e-07 0L-8.31883e-07 1.96873L8.93748 10.5Z" fill="white"/>
+                        </svg>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="#">Производство оборудования</a>
+                        <a href="#">Металлическая мебель</a>
+                        <a href="#">Металлоконструкции</a>
+                    </div>
+                </div>
                 <a href="#">Наши работы</a>
                 <a href="#">О нас</a>
                 <a href="#">Контакты</a>
@@ -159,7 +164,7 @@
                     <path d="M17.425 16.3951L13.141 11.9395C14.2425 10.6301 14.846 8.98262 14.846 7.26749C14.846 3.26026 11.5858 0 7.57853 0C3.5713 0 0.311035 3.26026 0.311035 7.26749C0.311035 11.2747 3.5713 14.535 7.57853 14.535C9.0829 14.535 10.5165 14.0812 11.7422 13.2199L16.0587 17.7093C16.2392 17.8967 16.4818 18 16.7419 18C16.988 18 17.2215 17.9062 17.3988 17.7355C17.7755 17.3731 17.7875 16.7721 17.425 16.3951ZM7.57853 1.89587C10.5405 1.89587 12.9502 4.30552 12.9502 7.26749C12.9502 10.2295 10.5405 12.6391 7.57853 12.6391C4.61655 12.6391 2.2069 10.2295 2.2069 7.26749C2.2069 4.30552 4.61655 1.89587 7.57853 1.89587Z" fill="#3E3E3E"/>
                 </svg>                    
             </div>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <a href="javascript:void(0);" id="btnMobile" class="icon">
                 <i class="fa fa-2x fa-bars"></i>
             </a>
         </div>
@@ -206,22 +211,22 @@
             <div class="wrapper-grid">
                 <div class="box1">
                     <div class="wrapper-production">
-                        <h2 class="text-left pl-3">Производство оборудования</h2>
+                        <h2 class="text-left pl-3 pr-3">Производство оборудования</h2>
                     </div>
                     <div class="wrapper-furniture">
-                        <h2 class="text-left pl-3">Металлическая мебель</h2>
+                        <h2 class="text-left pl-3 pr-3">Металлическая мебель</h2>
                     </div>
                     <div class="wrapper-structures">
-                        <h2 class="text-left pl-3">Металлоконструкции</h2>
+                        <h2 class="text-left pl-3 pr-3">Металлоконструкции</h2>
                     </div>
                     <div class="wrapper-metalworking">
-                        <h2 class="text-left pl-3">Металлообработка</h2>
+                        <h2 class="text-left pl-3 pr-3">Металлообработка</h2>
                     </div>
                     <div class="wrapper-cutting">
-                        <h2 class="text-left pl-3">Раскрой металла</h2>
+                        <h2 class="text-left pl-3 pr-3">Раскрой металла</h2>
                     </div>
                     <div class="wrapper-department">
-                        <h2 class="text-left pl-3">Конструкторское бюро</h2>
+                        <h2 class="text-left pl-3 pr-3">Конструкторское бюро</h2>
                     </div>
                 </div>
                 <div class="box2">
@@ -378,14 +383,9 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <!-- search -->
-    <script src="js/search.js"></script>
-    <!-- mobile menu -->
-    <script src="js/mobileMenu.js"></script>
+    <!-- script -->
+    <script src="./dist/bundle.js"></script>
     <!-- swiper script -->
     <script src="https://unpkg.com/swiper/js/swiper.js"></script>
-    <script src="js/swiperInit.js"></script>
-    <!-- rotate gear -->
-    <script src="js/rotateGear.js"></script>
 </body>
 </html>
